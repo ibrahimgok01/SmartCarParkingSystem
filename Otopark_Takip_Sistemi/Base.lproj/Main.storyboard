@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Hgr-i2-Uv7">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Otopark_Takip_Sistemi" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="İl Seçiniz" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4dV-zp-oIl">
+                                <rect key="frame" x="83" y="437" width="248" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7A0-Aq-Vgz">
+                                <rect key="frame" x="128" y="561" width="158" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Otopark Ara"/>
+                                <connections>
+                                    <action selector="otoparkAraButtonTiklandi:" destination="BYZ-38-t0r" eventType="touchUpInside" id="oD0-kO-ib0"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="4dV-zp-oIl" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="83" id="4zp-em-hOb"/>
+                            <constraint firstItem="7A0-Aq-Vgz" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="128" id="RJn-3H-QL3"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="7A0-Aq-Vgz" secondAttribute="trailing" constant="128" id="Xuk-h2-ryv"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="4dV-zp-oIl" secondAttribute="trailing" constant="83" id="YK0-kV-3fZ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="7A0-Aq-Vgz" secondAttribute="bottom" constant="270" id="ahQ-qQ-Cib"/>
+                            <constraint firstItem="4dV-zp-oIl" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="349" id="fDW-Ty-Ft9"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="0yz-n8-Vda"/>
+                    <connections>
+                        <outlet property="otoparkAraButton" destination="7A0-Aq-Vgz" id="DCi-HP-N6a"/>
+                        <outlet property="textField" destination="4dV-zp-oIl" id="BSt-TA-hgp"/>
+                        <segue destination="4aI-vQ-8cR" kind="show" identifier="toMapVC" id="Jc4-t1-sbk"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="928.98550724637687" y="83.705357142857139"/>
+        </scene>
+        <!--Park Map-->
+        <scene sceneID="hMc-N5-V3H">
+            <objects>
+                <viewController id="4aI-vQ-8cR" customClass="parkMap" customModule="Otopark_Takip_Sistemi" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="OEi-Ja-szh">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="hIL-zd-qO6">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                            </mapView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="dld-MJ-XKJ"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="hIL-zd-qO6" firstAttribute="bottom" secondItem="dld-MJ-XKJ" secondAttribute="bottom" id="3JU-0A-2aY"/>
+                            <constraint firstItem="hIL-zd-qO6" firstAttribute="leading" secondItem="dld-MJ-XKJ" secondAttribute="leading" id="IkD-Qw-R9U"/>
+                            <constraint firstItem="hIL-zd-qO6" firstAttribute="centerX" secondItem="OEi-Ja-szh" secondAttribute="centerX" id="nos-W2-FG0"/>
+                            <constraint firstItem="hIL-zd-qO6" firstAttribute="top" secondItem="dld-MJ-XKJ" secondAttribute="top" id="r9V-Go-U7B"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="2c9-Lq-irN"/>
+                    <connections>
+                        <outlet property="mapView" destination="hIL-zd-qO6" id="UbV-gt-Td7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="T6M-vf-6se" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1747.826086956522" y="83.705357142857139"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="gla-5E-NpN">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Hgr-i2-Uv7" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Mkp-H3-Aik">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="tjb-6F-uRY"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="soz-Ko-v8D" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="18.840579710144929" y="83.705357142857139"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
